@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    font-family: 'Century Gothic';
+    scroll-behavior: smooth;
+    --seda: rgb(205,205,205);
+
+}
+body, html {
+    height: 100%;
+}
+
+.parallax1 {
+    background-image: url(kuchyn_inside.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+}
+.logo {
+    display: block;
+    /* width: 20%; */
+    /* margin-left: auto;
+    margin-right: auto; */
+    position: absolute;
+    left: 35%;
+    width: 25%;
+    top: 20%;
+    background-color: rgba(255,255,255,0.8);
+    padding: 2.5%;
+    border-radius: 1rem;
+}
+.downarrow {
+    width: 5%;
+    height: auto;
+    display: block;
+    /* margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%; */
+    position: absolute;
+    left: 47.5%;
+    bottom:3%;
+}
+#historie {
+    display: block;
+    background-color: var(--seda);
+    justify-content: center;
+    padding-bottom: 2%;
+    text-align: center;
+    padding-top: 2%;
+}
+#historie > h1 {
+    font-size: 100px;
+    margin-bottom: 1%;
+    color: rgb(243,228,27);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+#historie > p {
+    font-size: 35px;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+.parallax2 {
+    background-image: url(auta.png);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+    top: 0;
+}
+
+@media only screen and (max-width: 1300px) {
+    .logo {width: 40%; left: 27.5%;}
+  }
+@media only screen and (max-width: 600px) {
+    .logo {width: 80%; left: 7.5%;}
+    .downarrow {width: 15%; left: 42.5%;}
+    #historie > h1 {font-size: 70px;}
+    #historie > p {font-size: 22px; margin-left: 2.5%; margin-right: 2.5%;}
+
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    background-color: var(--seda);
+    height: 15%;
+    font-size: 30px;
+}
+.footer > .a1 {display: flex; margin-right: auto; margin-left: auto;grid-row:1/2; grid-column:1/2;  align-items: center;}
+.footer > .a2 {display: flex; margin-right: auto; margin-left: auto;grid-row:2/3; grid-column:1/2;  align-items: center;}
+
+@media only screen and (max-width: 850px) {
+    .footer {font-size: 20px; text-align: center;}
+}
+    
+.footer > a {   
+    grid-row: 1/3;
+    grid-column: 2/3;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    height: 60%;
+    justify-content: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.footer > a > .ig {
+    height: 120%;
+}
+.parallax3 {
+    background-image: url(kucharky.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+    top: 0;
+}
+
+.kontakty {
+    display: flex;
+    margin-top: 2.5% ;
+    flex-wrap: wrap;
+}
+.singlecontact {
+    margin-left: auto;
+    margin-right: auto;
+}
+.kontakty > .singlecontact > a:link {
+    text-decoration: none;
+    color: black;
+}.kontakty > .singlecontact > a:hover {
+    text-decoration: underline;
+    color: grey;
+}
