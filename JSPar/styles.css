@@ -43,6 +43,7 @@ body {
     font-size: 300px;
     left: 50%;
     margin-left: -70px;
+    
 }
 .shotsfired {
     animation: vystreleni;
@@ -53,4 +54,7 @@ body {
     from {opacity: 0;}
     15% {opacity: 1;}
     to {opacity: 0;}
+}
+.flex {
+    display:flex;
 }
