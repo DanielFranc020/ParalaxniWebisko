@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="cz">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PP</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="../index.html"><img class="home" alt="zpatky do hubu ikona" src="home.png"></a>
+
+    <h1 class="skore" id="skore">0</h1>
+
+    <img class="vybuch" alt="vybuch" src="fire.png">
+    <img class="mnau" alt="mířič" src="crosshair.png">
+    <img class="volny" alt="zanet dvanacterniku" src="volny.png">
+
+    <script type="text/javascript">
+        
+        const medvidek = document.querySelector('.volny')
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        var skore = document.getElementById("skore");
+        var selhani = new Audio('selhani.mp3');
+
+
+        document.addEventListener('DOMContentLoaded', function(a) {
+            presunoutMedvidka();
+        })
+        function presunoutMedvidka() {
+            var x = Math.floor(Math.random() * (w - parseInt(medvidek.width)));
+            var y = Math.floor(Math.random() * (h - parseInt(medvidek.height)));
+            medvidek.style.left = x + 'px';
+            medvidek.style.top = y + 'px';
+        }
+        function pridaniSkore() {
+            skore.innerHTML = parseInt(skore.innerHTML) + 1;
+        }
+        document.addEventListener("mousemove", function(e) {
+            const kocka = document.querySelector('.mnau');
+            const sirka = kocka.width
+            const vyska = kocka.height
+            kocka.style.left = e.pageX - sirka/2 + 'px';
+            kocka.style.top =  e.pageY - vyska/2 + 'px';;
+        })
+
+        document.addEventListener("click", function(f) {
+            const vybuch = document.querySelector('.vybuch')
+            const sirka = vybuch.width
+            const vyska = vybuch.height
+            vybuch.style.left = f.pageX - sirka/2 + 'px';
+            vybuch.style.top =  f.pageY - vyska/2 + 'px';
+            vybuch.style.opacity = 1;
+            if (f.pageX > parseInt(medvidek.style.left) && f.pageX < (parseInt(medvidek.style.left) + parseInt(medvidek.width)) && f.pageY > parseInt(medvidek.style.top) && f.pageY < parseInt(medvidek.style.top) + parseInt(medvidek.height)) {
+                pridaniSkore();
+                presunoutMedvidka();
+            }
+            else {
+                if (skore.innerHTML != 0) {
+                    selhani.play();
+                    skore.innerHTML = 0;
+                    skore.style.marginleft = "-" + (parseInt(skore.width)/2) + 'px';
+                    presunoutMedvidka()
+                }
+            }
+        })
+    </script>
+</body>
+</html>

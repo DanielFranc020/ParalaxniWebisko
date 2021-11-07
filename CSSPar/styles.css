@@ -16,6 +16,15 @@ body, html {
     background-size: cover;
     height: 100%;
 }
+.home {
+    width: 80px;
+    margin-left: 2%;
+    margin-top: 2%;
+    padding: 1%;
+    border-radius: 15%;
+    background-color: rgba(255,255,255,0.8);
+    height: auto;
+}
 .logo {
     display: block;
     /* width: 20%; */
