@@ -49,7 +49,7 @@ body, html {
     left: 47.5%;
     bottom:3%;
 }
-#historie {
+.historie {
     display: block;
     background-color: var(--seda);
     justify-content: center;
@@ -57,13 +57,13 @@ body, html {
     text-align: center;
     padding-top: 2%;
 }
-#historie > h1 {
+.historie > h1 {
     font-size: 100px;
     margin-bottom: 1%;
     color: rgb(243,228,27);
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
-#historie > p {
+.historie > p {
     font-size: 35px;
     margin-left: 10%;
     margin-right: 10%;
