@@ -12,7 +12,7 @@
 
     <h1 class="skore" id="skore">0</h1>
 
-    <img class="vybuch" alt="vybuch" src="fire.png">
+    <img class="vybuch" id="vystrel" alt="vybuch" src="fire.png">
     <img class="mnau" alt="mířič" src="crosshair.png">
     <img class="volny" alt="zanet dvanacterniku" src="volny.png">
 
@@ -49,12 +49,17 @@
             const vybuch = document.querySelector('.vybuch')
             const sirka = vybuch.width
             const vyska = vybuch.height
+            const vystrel = document.getElementById('')
             vybuch.style.left = f.pageX - sirka/2 + 'px';
-            vybuch.style.top =  f.pageY - vyska/2 + 'px';
-            vybuch.style.opacity = 1;
+            vybuch.style.top =  f.pageY - vyska/2 + 'px';  
+
+            vybuch.classList.remove('shotsfired');
+            vybuch.offsetWidth;
+            vybuch.classList.add('shotsfired');
+
             if (f.pageX > parseInt(medvidek.style.left) && f.pageX < (parseInt(medvidek.style.left) + parseInt(medvidek.width)) && f.pageY > parseInt(medvidek.style.top) && f.pageY < parseInt(medvidek.style.top) + parseInt(medvidek.height)) {
                 pridaniSkore();
-                presunoutMedvidka();
+                setTimeout(presunoutMedvidka(), 150);
             }
             else {
                 if (skore.innerHTML != 0) {
